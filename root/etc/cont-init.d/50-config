@@ -14,7 +14,7 @@ fi
 
 rm -rf /etc/crontabs/abc
 if [ -f /config/.env ] && [ -f /config/.pytrakt.json ]; then
-    ln -s /config/crontabs/abc /etc/crontabs/abc
+    cp /config/crontabs/abc /etc/crontabs/abc
 fi
 
 chown -R abc:abc /config
