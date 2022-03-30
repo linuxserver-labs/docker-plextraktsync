@@ -1,0 +1,20 @@
+#!/usr/bin/with-contenv bash
+
+mkdir -p /config/crontabs
+
+if [ ! -f /config/config.json ]; then
+    echo "**** First run detected. Initializing PlexTraktSync config.json and printing info ****"
+    chown abc:abc /config
+    plextraktsync info
+fi
+
+if [ ! -f /config/crontabs/abc ]; then
+    cp /defaults/abc /config/crontabs/abc
+fi
+
+rm -rf /etc/crontabs/abc
+if [ -f /config/.env ] && [ -f /config/.pytrakt.json ]; then
+    ln -s /config/crontabs/abc /etc/crontabs/abc
+fi
+
+chown -R abc:abc /config
