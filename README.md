@@ -56,7 +56,7 @@ The architectures supported by this image are:
 
 ## Application Setup
 
-After creation and first start of the container, `config.json` file will be created in the config folder. However, since Plex and Trakt.tv credentials will be missing, scrobbling and auto-sync will be disabled. Edit the `config.json` file as necessary and manually run the first sync via `docker exec -it plextraktsync plextraktsync`. The wizard will ask for the necessary credentials and then run the first sync. Once that's completed, you can restart the container and scrobbling and auto sync should be active.
+After creation and first start of the container, `config.yml` file will be created in the config folder. However, since Plex and Trakt.tv credentials will be missing, scrobbling and auto-sync will be disabled. Edit the `config.yml` file as necessary and manually run the first sync via `docker exec -it plextraktsync plextraktsync`. The wizard will ask for the necessary credentials and then run the first sync. Once that's completed, you can restart the container and scrobbling and auto sync should be active.
 
 By default, sync will run every two hours. The schedule is customizable via the crontab file `/config/crontabs/abc`. Make sure to restart the container after making changes to it.
 
@@ -217,4 +217,5 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
+* **24.07.22:** - Check for `config.yml` instead of the deprecated `config.json`.
 * **30.03.22:** - Initial Release.
