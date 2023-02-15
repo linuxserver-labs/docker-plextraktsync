@@ -17,4 +17,4 @@ if [ -f /config/.env ] && [ -f /config/.pytrakt.json ]; then
     cp /config/crontabs/abc /etc/crontabs/abc
 fi
 
-chown -R abc:abc /config
+lsiown -R abc:abc /config

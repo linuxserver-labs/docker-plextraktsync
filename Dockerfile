@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.15
+FROM ghcr.io/linuxserver/baseimage-alpine:3.17
 
 ARG BUILD_DATE
 ARG VERSION
@@ -16,15 +16,16 @@ ENV \
 RUN \
   echo "**** install runtime dependencies ****" && \
   apk add --no-cache \
-    curl \
-    jq \
-    py3-pip && \
+    python3 && \
   echo "**** install plextraktsync ****" && \
   if [ -z "${APP_VERSION}" ]; then \
     APP_VERSION=$(curl -sL "https://pypi.python.org/pypi/PlexTraktSync/json" | jq -r '. | .info.version'); \
   fi && \
-  pip3 install --no-cache-dir -U pip && \
-  pip install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.15/ \
+  python3 -m ensurepip && \
+  pip3 install -U --no-cache-dir \
+    pip \
+    wheel && \
+  pip3 install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.17/ \
     PlexTraktSync==${APP_VERSION} && \
   echo "**** clean up ****" && \
   rm -rf \
