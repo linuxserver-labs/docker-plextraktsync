@@ -1,8 +1,14 @@
 #!/usr/bin/with-contenv bash
 
 if [ -f /config/.env ] && [ -f /config/.pytrakt.json ]; then
-    exec \
-        s6-setuidgid abc python3 -m plextraktsync watch
+    if [ -f /config/NO_WATCH ]; then
+        echo "'plextraktsync watch' is disabled because of 'NO_WATCH' file"
+        exec \
+            sleep infinity
+    else
+        exec \
+            s6-setuidgid abc python3 -m plextraktsync watch
+    fi
 else
     echo "**** Plex and/or Trakt.tv account info missing. Please manually run an initial sync via the following command on your docker host and restart the container when finished: ****"
     echo "docker exec -it plextraktsync plextraktsync sync"

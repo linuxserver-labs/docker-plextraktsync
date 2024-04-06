@@ -217,7 +217,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **06.04.24:** - Fix deprecated `sync` command
+* **06.04.24:** - Fix deprecated `sync` command & add support for disabling `watch` command
 * **16.05.23:** - Rebase to alpine 3.18, deprecate arm32v7 (armhf) per [this notice](https://info.linuxserver.io/issues/2023-05-06-armhf/).
 * **24.07.22:** - Check for `config.yml` instead of the deprecated `config.json`.
 * **30.03.22:** - Initial Release.
