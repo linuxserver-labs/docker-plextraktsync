@@ -5,7 +5,7 @@ if [ -f /config/.env ] && [ -f /config/.pytrakt.json ]; then
         s6-setuidgid abc python3 -m plextraktsync watch
 else
     echo "**** Plex and/or Trakt.tv account info missing. Please manually run an initial sync via the following command on your docker host and restart the container when finished: ****"
-    echo "docker exec -it plextraktsync plextraktsync"
+    echo "docker exec -it plextraktsync plextraktsync sync"
     exec \
         sleep infinity
 fi
