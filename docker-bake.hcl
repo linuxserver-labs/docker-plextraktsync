@@ -29,14 +29,6 @@ target "arm64v8" {
   ]
 }
 
-target "arm32v7" {
-  inherits = ["image"]
-  dockerfile = "Dockerfile.armhf"
-  platforms = [
-    "linux/arm/v7"
-  ]
-}
-
 target "64" {
   inherits = ["image"]
   platforms = [
@@ -48,8 +40,7 @@ target "64" {
 target "arm" {
   inherits = ["image"]
   platforms = [
-    "linux/arm64",
-    "linux/arm/v7"
+    "linux/arm64"
   ]
 }
 
@@ -57,7 +48,6 @@ target "all" {
   inherits = ["image"]
   platforms = [
     "linux/amd64",
-    "linux/arm64",
-    "linux/arm/v7"
+    "linux/arm64"
   ]
 }
