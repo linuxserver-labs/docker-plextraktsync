@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: linuxserver-labs/docker-actions/.github/workflows/check-baseimage-update.yml@v7.0.2
+    uses: linuxserver-labs/docker-actions/.github/workflows/check-baseimage-update.yml@v7.0.3
     with:
       repo_owner: ${{ github.repository_owner }}
       baseimage: "alpine"
