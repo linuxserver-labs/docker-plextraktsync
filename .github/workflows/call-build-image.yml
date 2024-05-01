@@ -7,7 +7,7 @@ on:
 
 jobs:
   call-workflow:
-    uses: linuxserver-labs/docker-actions/.github/workflows/build-image.yml@v7.0.2
+    uses: linuxserver-labs/docker-actions/.github/workflows/build-image.yml@v7.0.4
     with:
       repo_owner: ${{ github.repository_owner }}
       app_name: "plextraktsync"
