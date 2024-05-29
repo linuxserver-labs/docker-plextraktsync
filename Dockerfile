@@ -1,4 +1,4 @@
-FROM ghcr.io/linuxserver/baseimage-alpine:3.18
+FROM ghcr.io/linuxserver/baseimage-alpine:3.20
 
 ARG BUILD_DATE
 ARG VERSION
@@ -25,8 +25,9 @@ RUN \
   pip install -U --no-cache-dir \
     pip \
     wheel && \
-  pip install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.18/ \
+  pip install --no-cache-dir --find-links https://wheel-index.linuxserver.io/alpine-3.20/ \
     PlexTraktSync==${APP_VERSION} && \
+  printf "Linuxserver.io version: ${VERSION}\nBuild-date: ${BUILD_DATE}" > /build_version && \
   echo "**** clean up ****" && \
   rm -rf \
     /tmp/* \
