@@ -11,7 +11,7 @@ jobs:
     with:
       repo_owner: ${{ github.repository_owner }}
       baseimage: "alpine"
-      basebranch: "3.18"
+      basebranch: "3.20"
       app_name: "plextraktsync"
     secrets:
       repo_release_token: ${{ secrets.repo_release_token }}
