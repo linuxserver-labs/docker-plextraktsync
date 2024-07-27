@@ -1,2 +1,2 @@
 # min   hour    day     month   weekday command
-0 */2 * * * /usr/bin/with-contenv python3 -m plextraktsync
+0 */2 * * * /usr/bin/with-contenv python3 -m plextraktsync sync
