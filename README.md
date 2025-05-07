@@ -197,7 +197,7 @@ Once registered you can define the dockerfile to use with `-f Dockerfile.aarch64
 
 ## Versions
 
-* **27.07.24:** - Add ̀`sync` command to `plextraktsync` in cron file per deprecation warning of running without a command.
+* **07.05.25:** - Add ̀`sync` command to `plextraktsync` in cron file per deprecation warning of running without a command.
 * **28.05.24:** - Rebase to alpine 3.20.
 * **16.05.23:** - Rebase to alpine 3.18, deprecate arm32v7 (armhf) per [this notice](https://info.linuxserver.io/issues/2023-05-06-armhf/).
 * **24.07.22:** - Check for `config.yml` instead of the deprecated `config.json`.
